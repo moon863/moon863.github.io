@@ -7,23 +7,50 @@
     <title>Exam Result</title>
 </head>
 <body>
-    <h1>Exam Result</h1>
+   
 
-    <form action="request.php" method="POST">
-        <label for="turbo">Turbo C</label>
-        <input type="number" name="num_turbo" id="turbo" placeholder="Enter Turbo Mark" required>
+    <h1>Exam Result</h1>
+    <form name="myForm">
+        <label for="c">Turbo C</label>
+        <input type="number" name="c" id="c" required placeholder="Enter Turbo C Mark">
         <br><br>
 
         <label for="java">Java</label>
-        <input type="number" name="num_java" id="java" placeholder="Enter Java Mark" required>
+        <input type="number" name="java" id="java" required placeholder="Enter Java Mark">
         <br><br>
 
-        <label for="javascript">JavaScript</label>
-        <input type="number" name="num_javascript" id="javascript" placeholder="Enter JavaScript Mark" required>
+        <label for="js">JavaScript</label>
+        <input type="number" name="js" id="js" required placeholder="Enter JavaScript mark">
         <br><br>
 
-        <button type="button">Result</button>
+        <button type="button" onclick="result()">Result</button>
     </form>
-    
+
+     <script>
+         function result(){
+             
+             let c = document.myForm.c.value;
+             console.log(c);
+
+             let java = document.myForm.java.value;
+             console.log(java);
+
+             let js = document.myForm.js.value;
+             console.log(js);
+
+             if(c >= 50 && java >= 50 && js >= 50){
+                 document.write("<h1>This Student is Pass</h1>");
+             }else if(c >= 81 && java >= 81 && js >= 81){
+                 document.write("<h1>This Student is Pass with Distinction</h1>");
+             }else{
+                 document.write("<h1>This Student is Fail</h1>");
+             }
+
+
+             
+            
+         }
+            
+     </script>
 </body>
 </html>
